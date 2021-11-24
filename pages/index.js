@@ -1,82 +1,71 @@
-import Head from 'next/head'
+import { motion } from "framer-motion";
+import InfoName from "../components/infoName";
+import InfoJob from "../components/infoJob";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.js
-          </code>
-        </p>
-
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
+    <div
+      className="pt-10 sm:pt-16 grid grid-rows-2 sm:flex h-screen
+     bg-gray-900 px-6 md:px-8 lg:px-12 overflow-hidden"
+    >
+      <div className="items-center flex w-full sm:w-1/2 h-full">
+        <div className="text-center sm:text-left w-full">
+          <motion.h1
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r to-gray-400 from-green-400
+           "
           >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
+            Frontend
+          </motion.h1>
+          <motion.h1
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r to-gray-400 from-green-400
+          sm:text-right mt-2 mb-10 sm:mt-5 sm:mb-12"
           >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
+            Developer
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="text-center text-xs sm:text-xl text-gray-300"
           >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+            coding beautiful and simple things
+          </motion.p>
         </div>
-      </main>
-
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-        </a>
-      </footer>
+      </div>
+      <div className="flex items-start sm:items-center w-full sm:w-1/2">
+        <div className="sm:text-left sm:px-6 md:px-10 lg:px-16 w-full">
+          <motion.div
+            initial={{ x: 2000 }}
+            animate={{ x: 0 }}
+            transition={{
+              duration: 1,
+              delay: 1,
+              ease: "easeOut",
+            }}
+            className="flex justify-center sm:justify-start"
+          >
+            <InfoName name="Leonardo" lastname="Machado" />
+          </motion.div>
+          <motion.div
+            initial={{ x: 2000 }}
+            animate={{ x: 0 }}
+            transition={{
+              duration: 1,
+              delay: 1.1,
+              ease: "easeOut",
+            }}
+            className="flex justify-center sm:justify-end mt-6"
+          >
+            <InfoJob job={"Frontend Dev"} company={""} />
+          </motion.div>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
