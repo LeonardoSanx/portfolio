@@ -7,6 +7,7 @@ import emailjs from "emailjs-com";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import { motion } from "framer-motion";
+import Head from "next/head";
 
 export default function Contact({ service, template, user }) {
   const {
@@ -46,10 +47,17 @@ export default function Contact({ service, template, user }) {
     }
   };
   return (
-    <div
+    <main
       className="pt-16 flex-col min-h-screen text-center align-center
      bg-gray-900 px-6 sm:px-10 md:px-16 lg:px-20"
     >
+      <Head>
+        <title>Contact me</title>
+        <meta
+          name="description"
+          content="Contact infos, email, whatsapp, github, linkedin"
+        />
+      </Head>
       <div className=" my-6 sm:my-8">
         <motion.h1
           initial={{ opacity: 0 }}
@@ -196,7 +204,7 @@ export default function Contact({ service, template, user }) {
           <BsWhatsapp className="mx-3 hover:text-green-400" />
         </motion.a>
       </div>
-    </div>
+    </main>
   );
 }
 

@@ -1,16 +1,20 @@
 import { projects } from "../../data";
 import { motion, useTransform, useViewportScroll } from "framer-motion";
-import Link from "next/link";
+import Head from "next/head";
 
 export default function Id({ project }) {
   const { scrollYProgress } = useViewportScroll();
   const scale = useTransform(scrollYProgress, [0, 0.7, 1], [1, 0.8, 0.8]);
   const Pos = useTransform(scrollYProgress, [0, 1], [0, -150]);
   return (
-    <div
+    <main
       className="flex-col h-auto min-h-screen text-white text-center align-center
      bg-gray-900 overflow-hidden"
     >
+      <Head>
+        <title>{`Project ${project.id}`}</title>
+        <meta name="description" content="Frontend project of portfolio" />
+      </Head>
       <motion.h1
         style={{ scale: scale }}
         initial={{ y: 200, opacity: 0 }}
@@ -31,6 +35,7 @@ export default function Id({ project }) {
           <motion.img
             className="object-contain sm:object-cover object-left-top cursor-pointer"
             src={`../../images/${project.card_image}.jpg`}
+            alt={project.title}
             style={{ y: Pos }}
           />
         </a>
@@ -46,7 +51,7 @@ export default function Id({ project }) {
             <motion.img
               whileHover={{ scale: 1.1 }}
               src={`../images/${project.phone_image}.jpeg`}
-              alt=""
+              alt={`mobile ${project.title}`}
               className="h-44 sm:h-60 md:h-64 lg:h-96 cursor-pointer
             object-contain object-left-top rounded-lg shadow-lg"
             />
@@ -76,7 +81,7 @@ export default function Id({ project }) {
           </div>
         </motion.div>
       </div>
-    </div>
+    </main>
   );
 }
 

@@ -1,6 +1,6 @@
 export default function InfoJob({ job, company }) {
   return (
-    <div
+    <main
       className="px-8 py-4 text-gray-100 w-52 sm:w-72 
       text-left text-xs sm:text-sm md:text-md lg:text-lg
      bg-gradient-to-tr from-gray-900 to-gray-700"
@@ -15,6 +15,6 @@ export default function InfoJob({ job, company }) {
         </div>
       )}
       {"\u007D"}
-    </div>
+    </main>
   );
 }

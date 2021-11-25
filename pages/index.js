@@ -1,14 +1,22 @@
 import { motion } from "framer-motion";
 import InfoName from "../components/infoName";
 import InfoJob from "../components/infoJob";
+import Head from "next/head";
 
 export default function Home() {
   return (
-    <div
+    <main
       className="pt-10 sm:pt-16 grid grid-rows-2 sm:flex h-screen
      bg-gray-900 px-6 md:px-8 lg:px-12 overflow-hidden"
     >
-      <div className="items-center flex w-full sm:w-1/2 h-full">
+      <Head>
+        <title>Leonardo Portfolio</title>
+        <meta
+          name="description"
+          content="Jr Frontend portfolio, navigation, home, projects, contact"
+        />
+      </Head>
+      <section className="items-center flex w-full sm:w-1/2 h-full">
         <div className="text-center sm:text-left w-full">
           <motion.h1
             initial={{ opacity: 0 }}
@@ -37,8 +45,8 @@ export default function Home() {
             coding beautiful and simple things
           </motion.p>
         </div>
-      </div>
-      <div className="flex items-start sm:items-center w-full sm:w-1/2">
+      </section>
+      <section className="flex items-start sm:items-center w-full sm:w-1/2">
         <div className="sm:text-left sm:px-6 md:px-10 lg:px-16 w-full">
           <motion.div
             initial={{ x: 2000 }}
@@ -65,7 +73,7 @@ export default function Home() {
             <InfoJob job={"Frontend Dev"} company={""} />
           </motion.div>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
