@@ -31,6 +31,17 @@ export const projects = [
     description:
       "Responsive weather website with current information about any location, powerd by an API.",
   },
+  {
+    id: 4,
+    title: "Opencode",
+    link: "https://dev-opencode.vercel.app/",
+    git: "https://github.com/LeonardoSanx/opencode",
+    card_image: "opencode",
+    phone_image: "opencode_phone",
+    technologies: ["React", "Next", "Tailwind"],
+    description:
+      "Responsive website with ready to use tailwind code, functionalities, components, configurations and more.",
+  },
 ];
 
 export const achievements = [
